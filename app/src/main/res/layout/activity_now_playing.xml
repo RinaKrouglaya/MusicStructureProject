@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/nowplayingbg"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    android:padding="@dimen/overallPaddingSmall">
+
+    <ImageView
+        android:id="@+id/album_cover"
+        android:layout_width="@dimen/albumCoverImageSize"
+        android:layout_height="@dimen/albumCoverImageSize"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/frame_background"
+        android:visibility="visible"
+        tools:src="@drawable/album6" />
+
+    <TextView
+        android:id="@+id/song_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/panel"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/textGrayColor"
+        android:textSize="@dimen/biggerTextSize"
+        android:textStyle="bold"
+        tools:text="song name" />
+
+    <TextView
+        android:id="@+id/album_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/song_name"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/textGrayColor"
+        android:textSize="@dimen/smallerTextSize"
+        tools:text="album name" />
+
+    <ImageView
+        android:id="@+id/favorite_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/album_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/smallVerticalGap"
+        android:src="@drawable/favoritewhite" />
+
+    <RelativeLayout
+        android:id="@+id/panel"
+        android:layout_width="@dimen/albumCoverImageSize"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/album_cover"
+        android:layout_centerHorizontal="true"
+        android:background="@color/panelBackgroundColor"
+        android:padding="@dimen/overallPaddingSmall">
+
+        <View
+            android:id="@+id/center"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true"></View>
+
+        <ImageView
+            android:id="@+id/stop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/distanceFromMiddle"
+            android:layout_toLeftOf="@id/center"
+            android:src="@drawable/stop" />
+
+
+        <ImageView
+            android:id="@+id/forward_button"
+            style="@style/NowPlayingButtonsStyle"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/forward" />
+
+        <ImageView
+            android:id="@+id/backward_button"
+            style="@style/NowPlayingButtonsStyle"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/backward" />
+
+        <ImageView
+            android:id="@+id/play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/distanceFromMiddle"
+            android:layout_toRightOf="@id/center"
+            android:src="@drawable/play" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/back_to_playlist_button"
+        android:layout_width="@dimen/widthBackButton"
+        android:layout_height="@dimen/heightBackButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/back_button_selector"
+        android:gravity="center"
+        android:text="@string/back_to_playlist"
+        android:textAllCaps="false"
+        android:textColor="@color/textGrayColor"
+        android:textSize="@dimen/smallerTextSize" />
+</RelativeLayout>
